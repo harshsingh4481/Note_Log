@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            color: azure;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: black;
+            border-bottom: 1px solid white;
+            height: 30px;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            color: goldenrod;
+        }
+
+        .mainbox {
+            backdrop-filter: blur(10px);
+            width: 330px;
+            margin: 5% auto;
+            border: 1px solid rgb(172, 162, 162);
+            border-radius: 15px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-input {
+            background: transparent;
+            width: 80%;
+            border: none;
+            border-bottom: 2px solid white;
+            color: azure;
+            font-size: 18px;
+            padding: 0px 20px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+            outline: none;
+        }
+
+        .form-input::placeholder {
+            color: grey;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        #sub {
+            margin-top: 20px;
+            width: 180px;
+            height: 30px;
+            color: black;
+            border-radius: 50px;
+            font-size: 18px;
+        }
+        #response{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function done() {
+            document.getElementById("response").style.display="block"
+        }
+    </script>
+    <div class="navbar" id="navbar">
+        <div>
+            <a id="navcontent1" href="home.html">Home</a>
+            <a id="navcontent2" href="signup.html">Signup</a>
+            <a id="navcontent3" href="login.html">Login</a>
+            <a id="navcontent4" href="feature.html">Feature</a>
+            <a id="navcontent5" href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <div class="mainbox">
+        <form>
+            <h1 id="heading">Feedback Form</h1>
+            <input type="text" id="name" placeholder="Name" class="form-input" required>
+            <input type="email" id="mail" placeholder="Email" class="form-input" required>
+            <textarea id="message" placeholder="Message" rows="5" class="form-input" required></textarea>
+            <br>
+            <input type="submit" onclick="done()" value="Submit" id="sub">
+            <br>
+            <h3 id="response">Thanks! Your response has been recorded </h3>
+        </form>
+    </div>
+</body>
+</html>
+

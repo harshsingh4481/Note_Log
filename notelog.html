@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Note Log</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgb(55, 53, 53);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        input,
+        textarea {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            background-color: black;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .sub {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #note-list {
+            width: 51.5%;
+            margin: 20px auto;
+            background-color: rgb(55, 53, 53);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: black;
+            border-bottom: 1px solid white;
+            height: 30px;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+            
+        }
+
+        .navbar a:hover {
+            color: goldenrod;
+          
+        }
+
+    </style>
+    <script src="java.js"></script>
+</head>
+
+<body>
+    <div class="navbar" id="navbar">
+        <div>
+            <a id="navcontent1" href="home.html">Home</a>
+            <a id="navcontent2" href="signup.html">Signup</a>
+            <a id="navcontent3" href="login.html">Login</a>
+            <a id="navcontent4" href="feature.html">Feature</a>
+            <a id="navcontent5" href="feedback.html">Feedback</a>
+        </div>
+    </div>
+    <h1>Note Log</h1>
+    <form action="notelog.html">
+        <label for="Notetitle">Note Title:</label>
+        <input type="text" id="Notetitle" name="Notetitle">
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+
+        <label for="note">Note:</label>
+        <textarea id="note" name="note" rows="4"></textarea>
+
+        <input type="submit" value="Add Note" class="sub">
+    </form>
+    <div id="note-list"></div>
+
+
+</body>
+
+</html>

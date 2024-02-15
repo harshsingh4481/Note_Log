@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        * {
+            font-family: Arial, 'poppins';
+            color: azure;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: black;
+            border-bottom: 1px solid white;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 20px;
+            
+        }
+
+        .navbar a:hover {
+            color: goldenrod;
+          
+        }
+
+        .mainbox {
+            backdrop-filter: blur(10px);
+            height: 400px;
+            width: 330px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+            margin-bottom: 6%;
+            border: 1px solid rgb(172, 162, 162);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .em {
+            background: transparent;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid white;
+            color: azure;
+            font-size: 18px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+
+        }
+
+        ::placeholder {
+            color: grey;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        #sub {
+            margin-top: 20px;
+            width: 180px;
+            height: 30px;
+            color: black;
+            border-radius: 50px;
+            font-size: 18px;
+        }
+
+        #theme {
+            margin-left: auto;
+            margin-right: 0px;
+            width: 125px;
+            height: 30px;
+            display: inline-block;
+        }
+
+        #theme button {
+            color: black;
+            border-radius: 50px;
+            font-size: 18px;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        var ts = 0;
+        function themec(ts) {
+            if (ts == 0) {
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "black";
+                a.style.color = "white";
+
+                var b = document.getElementById("mail")
+                document.body.style.backgroundColor = "white";
+                document.getElementById("heading").style.color = "black"
+                b.style.color = "black"
+                b.style.borderColor = "black"
+
+                var c = document.getElementById("pass")
+                c.style.color = "black"
+                c.style.borderColor = "black"
+                document.getElementById("rem").style.color = "black"
+                document.getElementById("rem1").style.color = "black"
+                document.getElementById("fp").style.color = "black"
+                document.getElementById("reg").style.color = "black"
+                document.getElementById("dacc").style.color = "black"
+
+                document.getElementById("navbar").style.backgroundColor = "white"
+                document.getElementById("navbar").style.borderColor = "black"
+                document.getElementById("navcontent1").style.color = "black"
+                document.getElementById("navcontent2").style.color = "black"
+                document.getElementById("navcontent3").style.color = "black"
+                document.getElementById("navcontent4").style.color = "black"
+                document.getElementById("navcontent5").style.color = "black"
+                document.getElementById("theme1").innerHTML = "Dark theme"
+
+                var ts = ts + 1;
+
+            }
+            else if (ts == 1) {
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "white";
+                a.style.color = "black";
+
+                var b = document.getElementById("mail")
+                document.body.style.backgroundColor = "black";
+                document.getElementById("heading").style.color = "white"
+                b.style.borderColor = "white"
+
+                var c = document.getElementById("pass")
+                c.style.borderColor = "white"
+
+
+                document.getElementById("rem").style.color = "white"
+                document.getElementById("rem1").style.color = "white"
+                document.getElementById("fp").style.color = "white"
+                document.getElementById("reg").style.color = "white"
+                document.getElementById("dacc").style.color = "white"
+
+                document.getElementById("theme1").innerHTML = "White theme"
+                document.getElementById("navbar").style.backgroundColor = "black"
+                document.getElementById("navbar").style.borderColor = "white"
+                document.getElementById("navcontent1").style.color = "white"
+                document.getElementById("navcontent2").style.color = "white"
+                document.getElementById("navcontent3").style.color = "white"
+                document.getElementById("navcontent4").style.color = "white"
+                document.getElementById("navcontent5").style.color = "white"
+                var ts = ts - 1;
+            }
+            return ts;
+        }
+    </script>
+
+
+    <div class="navbar" id="navbar">
+        <div>
+            <a id="navcontent1" href="home.html">Home</a>
+            <a id="navcontent2" href="signup.html">Signup</a>
+            <a id="navcontent3" href="login.html">Login</a>
+            <a id="navcontent4" href="feature.html">Feature</a>
+            <a id="navcontent5" href="feedback.html">Feedback</a>
+        </div>
+        <div id="theme">
+            <button onclick="ts=themec(ts)" id="theme1">White Theme</button>
+        </div>
+    </div>
+
+    <div class="mainbox">
+        <form action="notelog.html">
+            <h1 id="heading">Login</h1>
+            <input type="email" id="mail" placeholder="Email" name="Email" class="em" required>
+            <input type="password" id="pass" placeholder="Password" name="Pass" value="" class="em" required
+                minlength="5">
+            <br>
+            <input type="checkbox" name="r" id="rem"><label for="rem" id="rem1">Remember me</label> <a href="forgetpass.html"
+                style="text-decoration: none;" id="fp">Forgot Password</a>
+            <br>
+            <input type="submit" value="Login" id="sub">
+            <br>
+            <p id="dacc">Don't have an account <a id="reg" href="signup.html">register</a></p>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

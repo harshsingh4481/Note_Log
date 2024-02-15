@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            font-family: arial;
+            color: azure;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: black;
+            border-bottom: 1px solid white;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+            
+        }
+
+        .navbar a:hover {
+            color: goldenrod;
+          
+        }
+
+        .mainbox {
+            backdrop-filter: blur(10px);
+            height: 550px;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 70px;
+            margin-bottom: 6%;
+            border: 1px solid rgb(172, 162, 162);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .en {
+            background: transparent;
+            width: 35%;
+            margin-left: 10px;
+            border: none;
+            border-bottom: 2px solid white;
+            color: azure;
+            font-size: 18px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+        }
+
+        .em {
+            background: transparent;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid white;
+            color: azure;
+            font-size: 18px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+
+        }
+
+        ::placeholder {
+            color: grey;
+            font-size: 18px;
+        }
+        h1{
+        
+            text-align: center; 
+            color: "whitesmoke"; 
+            margin-top: 40px; 
+            margin-bottom: 50px;
+
+        }
+        #subm{
+            margin-top: 20px; 
+            width: 180px; 
+            height: 30px; 
+            color: black; 
+            border-radius: 50px; 
+            font-size: 18px; 
+            cursor: pointer;
+        }
+        #theme {
+            margin-left: auto;
+            margin-right: 0px;
+            width: 125px;
+            height: 30px;
+            display: inline-block;
+        }
+
+        #theme button {
+            color: black;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var tc = 0;
+        function themec(tc){
+            if(tc==0){
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "black";
+                a.style.color = "white";
+
+                document.body.style.backgroundColor="white"
+                document.getElementById("head").style.color="black"
+
+                document.getElementById("fname").style.borderColor="black"
+                document.getElementById("lname").style.borderColor="black"
+                document.getElementById("mail").style.borderColor="black"
+                document.getElementById("pass").style.borderColor="black"
+                document.getElementById("cpass").style.borderColor="black"
+
+                document.getElementById("rim").style.color="black"
+                document.getElementById("tac").style.color="black"
+                document.getElementById("alc").style.color="black"
+                document.getElementById("lgin").style.color="black"
+
+                document.getElementById("navbar").style.backgroundColor = "white"
+                document.getElementById("navbar").style.borderColor = "black"
+                document.getElementById("navcontent1").style.color = "black"
+                document.getElementById("navcontent2").style.color = "black"
+                document.getElementById("navcontent3").style.color = "black"
+                document.getElementById("navcontent4").style.color = "black"
+                document.getElementById("navcontent5").style.color = "black"
+                document.getElementById("theme1").innerHTML = "Dark theme"
+                
+                
+
+                var tc = 1;
+                console.log(tc)
+            }
+            else if(tc==1){
+                var a = document.getElementById("theme1")
+                a.style.backgroundColor = "white";
+                a.style.color = "black";
+
+                document.body.style.backgroundColor="black"
+                document.getElementById("head").style.color="white"
+
+                document.getElementById("fname").style.borderColor="white"
+                document.getElementById("lname").style.borderColor="white"
+                document.getElementById("mail").style.borderColor="white"
+                document.getElementById("pass").style.borderColor="white"
+                document.getElementById("cpass").style.borderColor="white"
+
+                document.getElementById("rim").style.color="white"
+                document.getElementById("tac").style.color="white"
+                document.getElementById("alc").style.color="white"
+                document.getElementById("lgin").style.color="white"
+
+                document.getElementById("theme1").innerHTML = "White theme"
+                document.getElementById("navbar").style.backgroundColor = "black"
+                document.getElementById("navbar").style.borderColor = "white"
+                document.getElementById("navcontent1").style.color = "white"
+                document.getElementById("navcontent2").style.color = "white"
+                document.getElementById("navcontent3").style.color = "white"
+                document.getElementById("navcontent4").style.color = "white"
+                document.getElementById("navcontent5").style.color = "white"
+
+                var tc = 0;
+                console.log(tc)
+            }
+            return tc
+        }
+    </script>
+
+    <div class="navbar" id="navbar">
+        <div>
+            <a id="navcontent1" href="home.html">Home</a>
+            <a id="navcontent2" href="signup.html">Signup</a>
+            <a id="navcontent3" href="login.html">Login</a>
+            <a id="navcontent4" href="feature.html">Feature</a>
+            <a id="navcontent5" href="feedback.html">Feedback</a>
+        </div>
+        <div id="theme">
+            <button onclick="tc=themec(tc)" id="theme1">White Theme</button>
+        </div>
+    </div>
+    <div class="mainbox">
+        <form action="login.html">
+            <h1 id="head">Sign up</h1>
+
+            <input type="text" id="fname" placeholder="First name" name="fname" class="en" required><input type="text" id="lname" placeholder="Last name" name="lname" class="en">
+
+            <input type="email" placeholder="Email" id="mail" name="Email" class="em" required>
+
+            <input type="password" placeholder="Password" id="pass" name="Pass" value="" class="em" required minlength="5">
+            <br>
+
+            <input type="password" id="cpass" placeholder="Confirm Password" name="Pass" value="" class="em" required
+                minlength="5">
+            <br>
+
+            <input type="checkbox" name="r" id="rem"><label id="rim" for="rem">Remember me</label>
+            <br>
+
+            <input type="checkbox" name="b" id="q"><label for="q" id="tac">I agree to Terms of Service and Privacy
+                Policy.</label>
+
+            <input type="submit" value="Create an account" id="subm">
+
+            <br>
+            <p id="alc">Already have an account <a id="lgin" href="login.html">login</a></p>
+        </form>
+    </div>
+    
+</body>
+
+</html>
